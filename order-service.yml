@@ -32,3 +32,5 @@ jwt:
 services:
   auth:
     url: http://auth-service
+  product:
+    url: http://product-service
