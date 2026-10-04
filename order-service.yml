@@ -25,6 +25,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
 jwt:
   secret: ${JWT_SECRET:my-super-secret-key-for-ecommerce-auth-service-123456}
   expiration: 3600000
@@ -34,3 +35,21 @@ services:
     url: http://auth-service
   product:
     url: http://product-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: order-service
+    description: E-Commerce Order Service
+    version: 1.0.0
