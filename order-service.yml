@@ -1,3 +1,4 @@
+
 server:
   port: 8183
 
@@ -47,6 +48,12 @@ resilience4j:
         wait-duration-in-open-state: 10s
         permitted-number-of-calls-in-half-open-state: 3
         automatic-transition-from-open-to-half-open-enabled: true
+
+  timelimiter:
+    instances:
+      productService:
+        timeout-duration: 3s
+        cancel-running-future: true
 
 management:
   endpoints:
