@@ -39,8 +39,12 @@ services:
 
 app:
   http-client:
-    connect-timeout-ms: 2000
-    read-timeout-ms: 3000
+    auth:
+      connect-timeout-ms: 2000
+      read-timeout-ms: 3000
+    product:
+      connect-timeout-ms: 2000
+      read-timeout-ms: 3000
 
 resilience4j:
   circuitbreaker:
