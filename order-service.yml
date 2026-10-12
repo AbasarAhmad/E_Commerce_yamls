@@ -64,6 +64,15 @@ resilience4j:
         timeout-duration: 3s
         cancel-running-future: true
 
+  retry:
+    instances:
+      productServiceRetry:
+        max-attempts: 3
+        wait-duration: 500ms
+        retry-exceptions:
+          - org.springframework.web.client.ResourceAccessException
+          - org.springframework.web.client.HttpServerErrorException
+
 management:
   endpoints:
     web:
