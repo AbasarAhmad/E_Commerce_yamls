@@ -1,4 +1,3 @@
-
 server:
   port: 8183
 
@@ -81,6 +80,8 @@ management:
           - health
           - info
           - metrics
+          - retries
+          - retryevents
 
   endpoint:
     health:
